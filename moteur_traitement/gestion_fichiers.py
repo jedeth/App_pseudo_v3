@@ -3,7 +3,7 @@ import os
 import re
 from docx import Document # Pour lire et écrire les .docx
 import fitz  # PyMuPDF, pour lire les .pdf
-from fpdf import FPDF # Pour écrire des .pdf simples
+#from fpdf import FPDF # Pour écrire des .pdf simples
 
 # --- Fonctions de Lecture ---
 
@@ -109,9 +109,7 @@ def sauvegarder_document_pdf_simple(chemin_fichier_sortie, contenu_texte):
             # font_path = os.path.join(os.path.dirname(__file__), 'fonts', 'DejaVuSansCondensed.ttf')
             # pdf.add_font('DejaVu', '', font_path, uni=True)
             # Pour l'instant, on laisse fpdf2 chercher. S'il échoue, il passera à Arial.
-            #pdf.add_font('DejaVu', '', 'DejaVuSansCondensed.ttf', uni=True) 
-            font_path = os.path.join(os.path.dirname(__file__), 'fonts', 'DejaVuSansCondensed.ttf')
-            pdf.add_font('DejaVu', '', font_path, uni=True)
+            pdf.add_font('DejaVu', '', 'DejaVuSansCondensed.ttf', uni=True) 
             pdf.set_font("DejaVu", size=10)
             print("Utilisation de la police DejaVu pour le PDF.")
         except RuntimeError:
